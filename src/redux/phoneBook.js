@@ -11,12 +11,12 @@ const phoneBook = createSlice({
   },
   reducers: {
     addContact(state, { payload: { name, number } }) {
-      if (state.items.some(el => el.name.toLowerCase === name.toLowerCase)) {
+      if (state.items.some(el => el.name.toLowerCase() === name.toLowerCase())) {
         alert(`${name} is already in contacts.`);
         return;
       }
-      if (state.items.some(el => el.number === number)) {
-        alert(`${number} is already in contacts.`);
+      if (state.items.some(el => el.number.toLowerCase() === number.toLowerCase())) {
+        alert(`This number:${number} is already in contacts.`);
         return;
       }
 
